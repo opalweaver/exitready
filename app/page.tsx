@@ -108,7 +108,7 @@ export default function Home() {
       return {
         title: 'Nearly Ready',
         message:
-          'You're close. A few improvements to documentation, systems, or diversification would make your business significantly more sellable.',
+          "You're close. A few improvements to documentation, systems, or diversification would make your business significantly more sellable.",
         color: 'text-blue-600',
         bg: 'bg-blue-50',
       };
