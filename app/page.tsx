@@ -134,8 +134,16 @@ export default function Home() {
   const handleSubmit = async () => {
     const score = calculateScore();
     
-    // TODO: Send to backend/API
-    console.log({ businessName, email, score, answers });
+    // Send to API
+    try {
+      await fetch('/api/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ businessName, email, score, answers }),
+      });
+    } catch (err) {
+      console.error('Failed to save submission:', err);
+    }
     
     setSubmitted(true);
     setStep('result');
